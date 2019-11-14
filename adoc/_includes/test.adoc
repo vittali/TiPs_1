@@ -1,0 +1,12 @@
+
+== Test
+
+I start a second debug session, this time with the correct initialization script.
+After downloading the project to the BBB, the debugger will stop at main. Running the project
+will make the LEDs on the PRU Cape blink.
+
+Since I did not copy the project files into the workspace ( to maintain the include paths), I created
+files directly in the submodule directories. Since I can't push to the submodule repo, I could now add a
+new git remote to which I can push my changes.
+
+A complete and ready to debug project `PRU_LED0` is available in the compagnion repo.

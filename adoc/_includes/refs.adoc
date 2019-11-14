@@ -1,0 +1,36 @@
+
+== References
+
+[bibliography]
+=== Beagle Bone Black (BBB)
+
+- [[[r1]]] https://github.com/beagleboard/beaglebone-black/wiki/System-Reference-Manual[System Reference Manual, rev C, Oktober 13, 2017]. Excellent, very detailed manual,
+- [[[r2]]] https://elinux.org/Beagleboard:BeagleBoneBlack#BeagleBone_Black_Description[BBB Wiki on elinux.org]. A collection of hardware and software resources, tips and tricks.
+- [[[r3]]] https://www.twosixlabs.com/running-a-baremetal-beaglebone-black-part-1/[Running a Baremetal Beaglebone Black]. Includes a detail description on how to prepare for JTAG debugging.
+- [[[r4]]] https://blog.parr.us/2014/11/14/beaglebone-black-debugging-via-ti-usb100v2-jtag-emulator/[BeagleBone Black Debugging via TI USB100v2 JTAG Emulator]. Another BBB bare bone setup account.
+- [[[r5]]] https://beagleboard.org/black[Home of the BBB]. You can find a distributor here.
+- [[[r6]]] http://www.ti.com/tool/PRUCAPE[PRU Cape]. An extension board (cape) to experiment with the PRUs on the BBB.
+
+[bibliography]
+=== Sitara Processor
+
+- [[[r11]]] http://www.ti.com/tool/processor-sdk-am335x[Processor SDK for AM335x Sitara Processors - Linux and TI-RTOS support].
+- [[[r12]]] https://training.ti.com/sitara-arm-processors-boot-camp-training-series[Sitara™ ARM® Processors Boot Camp Training Series]. A comprehensive list of training material provided by TI.
+
+[bibliography]
+=== PRU (Programmable Realtime Unit)
+
+- [[[r21]]] http://processors.wiki.ti.com/index.php/PRU_Cape_Getting_Started_Guide[PRU Cape Getting started]. A short guide presenting the hardware on the cape.
+- [[[r22]]] http://processors.wiki.ti.com/index.php/PRU-ICSS?DCMP=pru&HQS=PRU[PRU-ICSS]. The Programmable Real-Time Unit Subsystem and Industrial Communication SubSystem (PRU-ICSS) wiki. This is
+the main entry point to PRU related resources.
+- [[[r23]]] http://processors.wiki.ti.com/index.php/PRU_Training:_Hands-on_Labs[Hands-on Labs]. Practical examples on PRU programming. Not sure if outdated ??
+- [[[r24]]] http://catch22.eu/beaglebone/beaglebone-pru-c/[PRU C code ]. A very good introduction to C programming on the PRU.
+- [[[r25]]] http://software-dl.ti.com/public/hpmp/sitara/debug_pru_using_ccs/presentation_html5.html[Debug PRU with CCS].
+- [[[r26]]] http://processors.wiki.ti.com/index.php/PRU-ICSS_Debug_on_AM335x[wiki page]. Dedicated to bare bones PRU programming on the Sitara processor. Very useful to get started.
+- [[[r27]]] http://software-dl.ti.com/public/hpmp/sitara/debug_pru_using_ccs/presentation_html5.html[Debug PRU with CCS]. Audio presentation, very useful to get started.
+
+[bibliography]
+=== Debug hardware
+- [[[r31]]] http://www.ti.com/tool/TMDSEMU110-U[TMDSEMU110-U-XDS110 JTAG Debug Probe]. A low cost debug probe. An alternative would be http://www.ti.com/tool/tmdsemu200-u?keyMatch=debug%20probe%20xds200&tisearch=Search-EN-Everything[XSD200].
+- [[[r32]]] https://www.digikey.de/product-detail/de/samtec-inc/FTR-110-03-G-D-06/SAM8790-ND/2651173[JTAG header]. JTAG to be soldered on the BBB.
+- [[[r33]]] https://www.digikey.de/product-detail/de/ftdi-future-technology-devices-international-ltd/TTL-232R-3V3/768-1015-ND/1836393[USB to Serial cable].

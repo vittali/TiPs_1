@@ -1,1 +1,1 @@
-[BBB1: Getting started](https://pvittali.bitbucket.io/bbb1)
+https://www.vittali.ch/TiPs_1/

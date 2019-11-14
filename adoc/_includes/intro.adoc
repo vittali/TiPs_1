@@ -1,0 +1,18 @@
+
+== Introduction
+
+:r1: https://github.com/beagleboard/beaglebone-black/wiki/System-Reference-Manual[SRM]
+:r2: http://processors.wiki.ti.com/index.php/PRU-ICSS?DCMP=pru&HQS=PRU[PRU]
+
+The Beagle Bone Black, revC (13/2017), described in detail in the System Reference Manual {r1},
+comes with the Sitara AM3358BZCZ100 processor, a SoC (system on chip) that includes a 1-Ghz
+Cortex A8 processor and two independent {r2}s (Programmable Realtime Unit).
+These are independent cores, specifically designed for real-time
+requirements. In particular, they allow for deterministic digital I/O operations.
+
+The BBB can provisioned in two different ways:
+
+. installing a bootloader to boot and run a suitable Linux distribution, like TI's Proessor SDK for AM335x processors,
+. opening a JTAG debug connection for example (but not restricted to) with TI's Code Composer Studio (CCS) IDE.
+
+The latter is the focus of this document.

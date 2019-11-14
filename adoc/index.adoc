@@ -1,0 +1,36 @@
+= Test automation with the Programmable Real-Time Unit (PRU) on the TI/Sitara processor
+:includedir: _includes
+:imagesdir: ./images
+:icons: font
+:toc: left
+:nofooter:
+:source-highlighter: highlightjs
+:sectnums:
+// refs
+:r1: https://github.com/vittali/vittali.ch-1-bbb-jtag[compagnion repo]
+:r2: http://www.ti.com/processors/sitara-arm/am335x-cortex-a8/overview.html[Sitara™ AM335x processors]
+:r3: https://beagleboard.org/black[BeagleBone Black (BBB)]
+
+:keywords: BeagleBone, BeagleBone Black, Sitara, JTAG, PRU, Cape, AM335x, Code Composer Studio, processor, Texas Instruments
+
+[abstract]
+icon:home[link="https://vittali.ch"]
+
+I want to program the Programmable Real-Time Unit (PRU) <<r22>>
+available on the Texas Instruments {r2} via a JTAG debug connection.
+I use a "bare metal" {r3} without a bootloader and therefore without running Linux.
+The goal is to use the BBB in unit testing
+embedded software on microcontrollers (MCU) where the BBB and the MCU under test are both controlled
+via Code Composer Studio in a common debug session. The PRU allows for deterministic and fast stimulus since it does
+not use caching or interrupts that could affect the timing behavior. In the following notes, I cover the steps required
+to start a debug session on the PRU, the unit testing strategy will be discussed in a separate document.
+
+
+The project files can be cloned from the {r1}.
+
+include::{includedir}/intro.adoc[]
+include::{includedir}/hardware.adoc[]
+include::{includedir}/software.adoc[]
+include::{includedir}/test.adoc[]
+include::{includedir}/refs.adoc[]
+include::{includedir}/JTAG.adoc[]

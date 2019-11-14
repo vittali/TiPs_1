@@ -1,0 +1,74 @@
+
+== Preparing the hardware
+
+:r1: http://www.ti.com/tool/PRUCAPE[PRU Cape]
+:r2: https://www.digikey.de/product-detail/de/ftdi-future-technology-devices-international-ltd/TTL-232R-3V3/768-1015-ND/1836393[USB to Serial cable]
+:r3: http://www.ti.com/tool/TMDSEMU110-U[XDS110 JTAG Debug Probe]
+:r4: http://www.ti.com/tool/tmdsemu200-u?keyMatch=debug%20probe%20xds200&tisearch=Search-EN-Everything[XSD200]
+:r5: https://www.digikey.de/product-detail/de/samtec-inc/FTR-110-03-G-D-06/SAM8790-ND/2651173[JTAG header]
+:r6: http://www.ti.com/lit/ug/sprui94/sprui94.pdf[XDS110 Debug Probe User's Guide]
+
+
+
+In order to program and debug a PRU, I need:
+
+* The BBB itself, from one of the distributors here <<r5>> or from https://www.reichelt.de[reichelt].
+* The BBB comes without a {r5} connector. It must be purchased separately (see also <<r2>>, <<r3>>) and soldered on the bottom side of the BBB.
+* A compatible debug probe like the {r3} which comes with the required cables.
+
+TIP: a more powerful alternative is the {r4}.
+
+In addition, I purchased the following optional items:
+
+.BOM - optional items
+* The {r1} is an extension board to get started with PRU programming.
+* The {r2} mentioned in the <<r1>>, Fig. 54, can be used to establish a serial communication with the host.
+It is not suitable for simultaneous usage with the PRU Cape, because the Cape will render the header on the BBB inaccessible.
+
+WARNING: I made sure to get a 3.3 V version of the FTDI connector to match the voltage on the BBB.
+
+* a standard RS232 serial monitor cable. This can be connected to the UART of the PRU cape (rather than the hidden serial header on the BBB) and
+allows for serial communications with the host PC.
+
+
+Before soldering the fine pitch {r5}, I wanted to refresh my soldering skills.
+I found the video tutorials by https://www.youtube.com/watch?v=5uiroWBkdFY[John Gammel] most helpful:
+
+. don't worry about shorts until finished,
+. to remove shorts, don't use solder wig, use flux.
+
+WARNING: testing for shorts with an ohmmeter will apply a small voltage to the pins of the Sitara processor.
+Strictly speaking, this voids the warranty as explained in the <<r1>>.
+
+The complete hardware setup:
+
+.Debug configuration
+image::setup.jpg[debug configuration]
+
+A closeup showing the key (missing pin on the JTAG header):
+
+.The JTAG header with the missing pin (key)
+image::closeup.jpg[JTAG connector,300,200]
+
+=== Preventing Linux from booting
+
+The BBB comes with Linux flashed to the onboard eMMC. To prevent Linux from booting
+I hold the boot switch pressed when applying power.
+This switch is not easily accessible with the PRU Cape mounted.
+I check that the heartbeat indicator LED does not flash as this would mean that the board is still booting.
+
+The are many tutorials available on how not to boot from the eMMC, none of which worked for me.
+So I settled for the brute force approach and erased the eMMC.
+
+WARNING: This will completely erase the device mmcblkx, where x depends on the configuration. With no SDCard inserted
+x is probably 0. I use `fdisk -l` to discover the available devices.
+
+[listing]
+.Erase the boot device - _x_ is configuration dependent
+$ dd if=/dev/zero of=/dev/mmcblkx bs=2M count=2048
+
+Now, when I apply power, only the power LED is permanently on.
+
+NOTE: it seems as if this is still not enough. When I connect the BBB to the host, the Network Manager App periodically
+shows "Connection failed" notifications.
+Apparently, the BBB tries to open a Ethernet-over-USB connection, which means that at least the bootloader is still present. TODO.

@@ -1,0 +1,18 @@
+
+=== JTAG debugging
+
+:r1: http://www.ti.com/tool/tmdsemu200-u?keyMatch=debug%20probe%20xds200&tisearch=Search-EN-Everything[JTAG connectors]. A comprehensive comparison of different connectors with pinout. That's the beauty of standards: there are so many !
+:r2: http://www2.keil.com/coresight/coresight-connectors[Core Sight Connectors]. Yet more JTAG pinouts.
+:r3: http://www2.keil.com/coresight#jtag[CoreSight™ Technology]. JTAG signal descriptions.
+
+Some launchpads contain debug probes that can be http://www.ti.com/tool/MSP-EXP432P4111[isolated]. Such a launchpad (< 15 USD) could thus
+be used as a super-low cost debug probe for the BBB. But this requires a set of expensive fine
+pitch connectors and ribbon cable (not tested) :
+https://www.digikey.de/product-detail/de/samtec-inc/FFSD-05-D-02.00-01-N/SAM8217-ND/1106576[1], https://www.digikey.de/product-detail/de/samtec-inc/FFSD-05-D-06.00-01-N/SAM8218-ND/1106577[2], https://www.digikey.de/product-detail/de/samtec-inc/FTSH-105-01-L-DV-K/SAM8799-ND/1875039[3],
+https://www.digikey.de/product-detail/de/samtec-inc/FTSH-110-01-L-DV-K/SAM8803-ND/2642229[4].
+
+I would also need to design and order a couple of printed circuit board adapters. Here are a couple of useful links:
+
+* {r1}
+* {r2}
+* {r3}

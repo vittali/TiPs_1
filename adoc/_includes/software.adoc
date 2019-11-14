@@ -1,0 +1,37 @@
+
+== Installing the software development environment
+:r1: http://software-dl.ti.com/ccs/esd/documents/ccs_downloads.html[Code Composer Studio Downloads]
+:r2: https://git.ti.com/cgit/pru-software-support-package/pru-software-support-package[PRU Software Support Package]
+:r3: http://processors.wiki.ti.com/index.php/PRU_Training:_Hands-on_Labs[PRU Training: Hands-on Labs]
+:r4: https://www.ti.com/tool/TI-CGT#PRU[TI code generation tools - C/C++ compilers and assembly language tools ]
+
+I installed CCS 9.2 from {r1} on Linux Mint 19.2.
+
+From the CCS App Center, I installed the *PRU C compiler* option.
+
+I cloned the {r2} as a git submodule into the compagnion repo.
+
+[listing]
+$ cd <compagnion repo dir>
+$ git submodule add https://git.ti.com/cgit/pru-software-support-package/pru-software-support-package
+
+Therefore, if I clone the companion repo, I need to say;
+
+[listing]
+$ git clone --recurse-submodules https://github.com/vittali/vittali.ch-bbb-jtag
+
+=== Getting started with the Hand-on Labs
+
+Based on _Lab1_ from {r3}:
+
+. When importing the project, I unchecked `Copy project into workspace`. If the project gets copied in the workspace
+the _include_ definitions will be wrong and the project won't compile without modifiation.
+. I did create a target configuration `BBB.ccxml`.
+. I did *not* change the initialization script as explained in (8).
+. I created a default Debug Configuration by starting a first debug session. This session fails because the initialization script is missing.
+. I open the newly created Debug Configuration and select the initialization script _bbb_pru_startup.js_ provided in the compagnion repo:
+
+.Selecting the initialization script
+image::init-script.png[init script]
+
+I can now debug and test the _Lab1_ demo,
