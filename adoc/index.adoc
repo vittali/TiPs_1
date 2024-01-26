@@ -7,7 +7,7 @@
 :source-highlighter: highlightjs
 :sectnums:
 // refs
-:r1: https://github.com/vittali/vittali.ch-1-bbb-jtag[compagnion repo]
+:r1: https://github.com/vittali/TiPs_1[compagnion repo]
 :r2: http://www.ti.com/processors/sitara-arm/am335x-cortex-a8/overview.html[Sitara™ AM335x processors]
 :r3: https://beagleboard.org/black[BeagleBone Black (BBB)]
 
